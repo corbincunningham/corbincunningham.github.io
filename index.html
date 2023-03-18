@@ -1,53 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Starfield Screensaver</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
-		}
-
-		.stars {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 100%;
-			background-color: black;
-		}
-
-		.star {
-			position: absolute;
-			border-radius: 50%;
-			background-color: white;
-		}
-	</style>
-</head>
-<body>
-	<div class="stars"></div>
-	<script>
-		var numStars = 500;
-
-		for (var i = 0; i < numStars; i++) {
-		  var star = document.createElement("div");
-		  star.className = "star";
-		  var xy = getRandomPosition();
-		  star.style.top = xy[0] + 'px';
-		  star.style.left = xy[1] + 'px';
-		  document.querySelector('.stars').appendChild(star);
-		}
-
-		function getRandomPosition() {
-		  var y = window.innerWidth;
-		  var x = window.innerHeight;
-		  var randomX = Math.floor(Math.random()*x);
-		  var randomY = Math.floor(Math.random()*y);
-		  return [randomX,randomY];
-		}
-		
-		
-	</script>
-</body>
+  <head>
+    <title>Spinning Photo Website</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        background-image: url('https://static.vecteezy.com/system/resources/thumbnails/001/541/050/small_2x/boy-cartoon-face-free-vector.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        animation: spin 2s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg) scale(1.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="spinner"></div>
+  </body>
 </html>
