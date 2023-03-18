@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Starfield Screensaver</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.stars {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: black;
+		}
+
+		.star {
+			position: absolute;
+			border-radius: 50%;
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="stars"></div>
+	<script>
+		var numStars = 500;
+
+		for (var i = 0; i < numStars; i++) {
+		  var star = document.createElement("div");
+		  star.className = "star";
+		  var xy = getRandomPosition();
+		  star.style.top = xy[0] + 'px';
+		  star.style.left = xy[1] + 'px';
+		  document.body.appendChild(star);
+		}
+
+		function getRandomPosition() {
+		  var y = window.innerWidth;
+		  var x = window.innerHeight;
+		  var randomX = Math.floor(Math.random()*x);
+		  var randomY = Math.floor(Math.random()*y);
+		  return [randomX,randomY];
+		}
+	</script>
+</body>
+</html>
