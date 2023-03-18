@@ -36,7 +36,7 @@
 		  var xy = getRandomPosition();
 		  star.style.top = xy[0] + 'px';
 		  star.style.left = xy[1] + 'px';
-		  document.body.appendChild(star);
+		  document.querySelector('.stars').appendChild(star);
 		}
 
 		function getRandomPosition() {
@@ -46,6 +46,8 @@
 		  var randomY = Math.floor(Math.random()*y);
 		  return [randomX,randomY];
 		}
+		
+		
 	</script>
 </body>
 </html>
